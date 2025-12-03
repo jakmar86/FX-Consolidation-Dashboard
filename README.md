@@ -1,4 +1,4 @@
-# FX-Consolidation-Dashboard
+## FX-Consolidation-Dashboard
 
 A specialised financial dashboard simulating multi-entity consolidation and foreign exchange translation (IAS 21)
 
@@ -18,13 +18,13 @@ This tool bridges the gap between raw ledger data and reported financials. It de
 
 # Tech Stack
 
-  - Core: Vanilla JavaScript (ES6+) for high-performance DOM manipulation.
+  - Core: Vanilla JavaScript.
 
-  - Styling: Tailwind CSS (Utility-first framework) via CDN.
+  - Styling: Tailwind CSS.
 
-  - Visualization: Chart.js for dynamic financial charting.
+  - Visualisation: Chart.js.
 
-  - API: fetch() / async-await handling for external data sources.
+  - API: fetch().
 
 # How to Run
 
