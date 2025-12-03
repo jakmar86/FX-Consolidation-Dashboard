@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -322,7 +322,8 @@
                 
                 if (data && data.rates && data.rates.GBP) {
                     state.liveRate = data.rates.GBP;
-                    els.sourceLabel.textContent = `Source: ExchangeRate-API (Updated ${new Date(data.date).toLocaleDateString()})`;
+                    // Force UK Date Format: dd/mm/yyyy
+                    els.sourceLabel.textContent = `Source: ExchangeRate-API (Updated ${new Date(data.date).toLocaleDateString('en-GB')})`;
                 } else {
                     throw new Error("Invalid Data");
                 }
@@ -492,6 +493,7 @@
                         data: [0, 0, 0],
                         backgroundColor: (ctx) => {
                             const v = ctx.raw;
+                            // Colour logic: Middle bar (Impact) red if negative
                             if(ctx.dataIndex === 1) return v >= 0 ? '#10b981' : '#f43f5e';
                             return '#475569'; // slate-600
                         },
@@ -533,7 +535,7 @@
 
             varianceChartInstance.data.datasets[0].data = [budgetNet, fxImpact, actualNet];
             
-            // Color logic for last bar
+            // Colour logic for last bar
             const colors = ['#64748b', (fxImpact >= 0 ? '#10b981' : '#f43f5e'), '#e2e8f0'];
             varianceChartInstance.data.datasets[0].backgroundColor = colors;
             
